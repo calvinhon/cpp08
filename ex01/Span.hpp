@@ -3,8 +3,11 @@
 
 #include <string>
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include <vector>
 #include <algorithm>
+#include <iterator>
 
 class Span {
     public:
@@ -14,7 +17,10 @@ class Span {
         ~Span();
 
         void            addNumber(int num);
-        void            addRange(int numOfElements);
+        void            addRange(unsigned int numOfElements);
+		unsigned int	getSize() const;
+		unsigned int	getEntries() const;
+		int				getEntry(unsigned int i) const;
         unsigned int    shortestSpan();
         unsigned int    longestSpan();
     
@@ -31,9 +37,12 @@ class Span {
     private:
         Span();
 
-        unsigned int	    _elementCount;
+        unsigned int	    _size;
+        unsigned int	    _entries;
         std::vector<int>	_array;
 
 };
+
+std::ostream& operator<<(std::ostream& os, Span& s);
 
 #endif
