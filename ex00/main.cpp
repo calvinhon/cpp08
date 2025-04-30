@@ -1,11 +1,12 @@
 #include "easyfind.hpp"
 
 int main(int ac, char** av) {
-    if (ac != 2 || !isdigit(av[1][0])) {
-        std::cout << "Input only 1 argument, an int" << std::endl;
+    if (ac != 2 || (av[1][0] != '-' && !isdigit(av[1][0]))
+        || (av[1][0] == '-' && !isdigit(av[1][1]))) {
+        std::cout << "Input ./CIA [int]" << std::endl;
         return 1;
     }
-    int arr[] = {-5, 1, 1, 0, 100, 50};
+    int arr[] = {-5, 1, 1, 0, 100, -50};
     int value = atoi(av[1]);
     
     std::cout << "\033[34mVector test >>>\033[0m" << std::endl;

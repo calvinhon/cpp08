@@ -23,9 +23,11 @@ int main() {
 		++it;
 	}
 	std::stack<int> s(mstack);
+	
 	std::cout << "\033[34mCheck copy >>>\033[0m\n";
 	std::cout << "Top of s: " << s.top() << std::endl;
 	std::cout << "Size of s: " << s.size() << std::endl;
+
 	std::cout << "\033[34mList check >>>\033[0m\n";
 	std::list<int> lst;
 	lst.push_back(5);
@@ -47,5 +49,6 @@ int main() {
 		std::cout << *lst_it << std::endl;
 		++lst_it;
 	}
+
 	return 0;
 }

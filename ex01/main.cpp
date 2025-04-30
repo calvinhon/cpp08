@@ -1,4 +1,4 @@
-#include "MutantStack.hpp"
+#include "Span.hpp"
 
 int main() {
 	try {
@@ -18,18 +18,20 @@ int main() {
 		std::cerr << e.what() << std::endl;
 		return 1;
 	}
+
 	try {
 		std::cout << "\033[34mAdd range >>>\033[0m\n";
-		Span one(5);
-		one.addRange(5);
-		std::cout << one << '\n';
-		std::cout << "Shortest span: " << one.shortestSpan() << '\n'; 
-		std::cout << "Longest span: " << one.longestSpan() << '\n'; 
-		std::cout << one;
+		Span two(-5);
+		two.addRange(5);
+		std::cout << two << '\n';
+		std::cout << "Shortest span: " << two.shortestSpan() << '\n'; 
+		std::cout << "Longest span: " << two.longestSpan() << '\n'; 
+		std::cout << two;
 		std::cout << std::endl;
 	} catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;
 		return 1;
 	}
+	
     return 0;
 }
