@@ -21,7 +21,7 @@ int main() {
 
 	try {
 		std::cout << "\033[34mAdd range >>>\033[0m\n";
-		Span two(-5);
+		Span two(5);
 		two.addRange(5);
 		std::cout << two << '\n';
 		std::cout << "Shortest span: " << two.shortestSpan() << '\n'; 
